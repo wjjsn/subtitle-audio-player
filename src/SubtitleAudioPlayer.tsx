@@ -7,7 +7,7 @@ export default function SubtitleAudioPlayer() {
     const [currentLine, setCurrentLine] = useState(0);
     const [revealedIndex, setRevealedIndex] = useState(null);
     const [segmentEnd, setSegmentEnd] = useState(null);
-    const audioRef = useRef(null);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const parseSRT = (srtText) => {
         const blocks = srtText.split(/\n\n+/);

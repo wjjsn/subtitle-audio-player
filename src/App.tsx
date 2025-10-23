@@ -1,5 +1,4 @@
-import React from 'react'
-import SubtitleAudioPlayer from './src/SubtitleAudioPlayer.jsx'
+import SubtitleAudioPlayer from './SubtitleAudioPlayer'
 
 function App() {
   return (
