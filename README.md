@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# 🎧 Subtitle Audio Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 这是一个完全由 AI 生成，仅供个人练习英语听力的项目。
 
-Currently, two official plugins are available:
+🌐 **在线体验地址**：[https://wjjsn.github.io/subtitle-audio-player/](https://wjjsn.github.io/subtitle-audio-player/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧩 项目简介
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+这是一个基于 **React + Material UI (MUI)** 开发的纯前端网页应用，  
+用于帮助用户练习听力与字幕对照阅读。上传一个包含 `.srt` 字幕文件和音频文件（`.mp3` / `.wav` / `.ogg`）的文件夹或 `.zip` 压缩包，系统会自动识别并生成一个交互式播放器：
 
-## Expanding the ESLint configuration
+- 🎵 根据音频时间自动滚动字幕  
+- 🎯 点击任意一句字幕，只播放对应音频片段并自动暂停  
+- 🕵️‍♂️ 每个字幕卡片可单独“显示 / 隐藏”文本，适合做听写练习  
+- 🗂 支持文件夹或压缩包上传，无需后端服务  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚙️ 技术栈
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| 技术 | 用途 |
+|------|------|
+| **React 19 + Vite** | 前端开发框架与构建工具 |
+| **Material UI (MUI)** | UI 组件库 |
+| **JSZip** | 客户端解压 zip 文件 |
+| **pnpm** | 包管理与构建加速工具 |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 本地运行
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+pnpm install
+pnpm run dev
